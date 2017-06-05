@@ -1,0 +1,30 @@
+[
+{
+  "model": "atraves.naturalperson",
+  "pk": 1,
+  "fields": {
+    "name": "Silas"
+  }
+},
+{
+  "model": "atraves.naturalperson",
+  "pk": 2,
+  "fields": {
+    "name": "Vitor"
+  }
+},
+{
+  "model": "atraves.naturalperson",
+  "pk": 3,
+  "fields": {
+    "name": "Carine S2"
+  }
+},
+{
+  "model": "atraves.naturalperson",
+  "pk": 4,
+  "fields": {
+    "name": "Nat\u00e1lia"
+  }
+}
+]
