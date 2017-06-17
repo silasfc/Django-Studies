@@ -6,7 +6,7 @@ from django.db import models
 class Pessoa(models.Model):
     nome = models.CharField(max_length=60)
 
-    def __str__(self):  # Python 3: def __str__(self):
+    def __str__(self):  # Python 3: def __unicode__(self):
         return self.nome
 
 
@@ -17,9 +17,10 @@ class Telefone(models.Model):
     )
 
     numero = models.CharField(max_length=15)
-    tipo = models.CharField(max_length=11, choices=TIPOS_DE_TELEFONES, default='R')
+    tipo = models.CharField(
+        max_length=11, choices=TIPOS_DE_TELEFONES, default='R')
 
-    def __str__(self):  # Python 3: def __str__(self):
+    def __str__(self):  # Python 3: def __unicode__(self):
         return self.numero
 
 
@@ -30,9 +31,10 @@ class Email(models.Model):
     )
 
     endereco = models.CharField(max_length=35)
-    tipo = models.CharField(max_length=13, choices=TIPOS_DE_EMAILS, default='P')
+    tipo = models.CharField(
+        max_length=13, choices=TIPOS_DE_EMAILS, default='P')
 
-    def __str__(self):  # Python 3: def __str__(self):
+    def __str__(self):  # Python 3: def __unicode__(self):
         return self.endereco
 
 
@@ -44,8 +46,9 @@ class Cadastro(models.Model):
     endereco = models.CharField(max_length=50, null=True)
     email_pessoal = models.ForeignKey(Email, related_name='+')
     email_institucional = models.ForeignKey(Email, related_name='+', null=True)
-    telefone_residencial = models.ForeignKey(Telefone, related_name='+', null=True)
+    telefone_residencial = models.ForeignKey(
+        Telefone, related_name='+', null=True)
     telefone_celular = models.ForeignKey(Telefone, related_name='+')
 
-    def __str__(self):  # Python 3: def __str__(self):
+    def __str__(self):  # Python 3: def __unicode__(self):
         return u'%s' % self.nome
