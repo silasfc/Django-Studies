@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
-# -*- coding: utf-8 -*-
+from django.conf.urls import url
 
-from django.conf.urls import patterns, url
+from . import views
+# ou ... from views import index
 
-urlpatterns = patterns(
-    'polls.views',
-    url(r'^$', 'index', name='index'),
-)
+app_name = 'polls'
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+    # ou ... url(r'^$', index, name='index'),
+]
