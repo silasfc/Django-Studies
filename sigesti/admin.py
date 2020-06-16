@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from django.contrib import admin
 from sigesti.models import AreaResponsavel, Lotacao, Categoria, Status, Equipamento, Emprestimo, Usuario, Assentamento, SLA, AssistenciaTecnica, Endereco, Solucao, Problema, Garantia, Chamado, AtendimentoExterno
 

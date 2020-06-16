@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from django.db import models
 from analisador.const import MMA_INTERVAL, MME_INTERVAL, k_value_on_mme, N_MAIORES_BM, ABREVIATURA_ACOES_CHOICES, NOME_ACOES_CHOICES, DECISAO_CHOICES
 

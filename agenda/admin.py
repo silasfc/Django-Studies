@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from django.contrib import admin
 from agenda.models import Pessoa, Telefone, Email, Cadastro
 

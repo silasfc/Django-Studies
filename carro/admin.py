@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from django.contrib import admin
 from django.conf.locale.pt_BR import formats as pt_BR_formats
 pt_BR_formats.DATE_FORMAT = "d/m/Y"

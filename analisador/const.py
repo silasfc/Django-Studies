@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # parâmetros
 MMA_INTERVAL = 40
 MME_INTERVAL = periodo_considerado = 9  # período considerado

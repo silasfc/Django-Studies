@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 FABRICANTE_CHOICES = (
     (1, 'Fiat'),
     (2, 'Chevrolet'),
