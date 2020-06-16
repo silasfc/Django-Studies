@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'django_extensions',
-    'polls.apps.PollsConfig',
+    # 'polls.apps.PollsConfig',
     # 'agenda',
     # 'analisador',
     # 'atraves',
@@ -50,9 +50,9 @@ INSTALLED_APPS = [
     # 'polls',
     # 'mariadapenha',
     # 'mirantedupark',
-    # 'rest_framework',
+    'rest_framework',
     # 'servers',
-    # 'snippets',
+    'snippets.apps.SnippetsConfig',
     # 'sigesti',
 ]
 

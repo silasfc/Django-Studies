@@ -17,8 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path(r'polls/', include('polls.urls')),
+    path('', include('snippets.urls')),
     path('admin/', admin.site.urls),
-    # url(r'^blog/', include('blog.urls', namespace='blog', app_name='blog')),
+    # path('polls/', include('polls.urls')),
+    # url('^blog/', include('blog.urls', namespace='blog', app_name='blog')),
     # url(r'^analisador/', include('analisador.urls', namespace='analisador', app_name='analisador')),
 ]
