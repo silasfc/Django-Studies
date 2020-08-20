@@ -1,6 +1,6 @@
-from django.conf.urls import patterns, url
+from django.urls import path
+from agenda import views
 
-
-urlpatterns = patterns('',
-    url(r'^$', 'config.views.agenda', name='home'),
-)
+urlpatterns = [
+    # path('/', 'views.agenda', name='home'),
+]

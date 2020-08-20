@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-19 21:01-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: agenda/models.py:6 agenda/models.py:51
+msgid "Name"
+msgstr "Nome"
+
+#: agenda/models.py:9
+msgid "Person"
+msgstr "Pessoa"
+
+#: agenda/models.py:10
+msgid "Persons"
+msgstr "Pessoas"
+
+#: agenda/models.py:18 agenda/models.py:58
+msgid "Phone"
+msgstr "Telefone Fixo"
+
+#: agenda/models.py:19 agenda/models.py:59
+msgid "Cell Phone"
+msgstr "Telefone Celular"
+
+#: agenda/models.py:22
+msgid "Number"
+msgstr "Número"
+
+#: agenda/models.py:23 agenda/models.py:40
+msgid "Kind"
+msgstr "Tipo"
+
+#: agenda/models.py:26
+msgid "Telephone"
+msgstr "Telefone"
+
+#: agenda/models.py:27
+msgid "Telephones"
+msgstr "Telefones"
+
+#: agenda/models.py:35
+msgid "Personal"
+msgstr "Pessoal"
+
+#: agenda/models.py:36
+msgid "Institutional"
+msgstr "Institucional"
+
+#: agenda/models.py:39 agenda/models.py:55
+msgid "Address"
+msgstr "Endereço"
+
+#: agenda/models.py:43
+msgid "Email"
+msgstr "Email"
+
+#: agenda/models.py:44
+msgid "Emails"
+msgstr "Emails"
+
+#: agenda/models.py:52
+msgid "Father"
+msgstr "Pai"
+
+#: agenda/models.py:53
+msgid "Mother"
+msgstr "Mãe"
+
+#: agenda/models.py:54
+msgid "Birth Date"
+msgstr "Aniversário"
+
+#: agenda/models.py:56
+msgid "Personal Email"
+msgstr "Email Pessoal"
+
+#: agenda/models.py:57
+msgid "Institutional Email"
+msgstr "Email Institucional"
+
+#: agenda/models.py:62
+msgid "Register"
+msgstr "Cadastro"
+
+#: agenda/models.py:63
+msgid "Registers"
+msgstr "Cadastros"

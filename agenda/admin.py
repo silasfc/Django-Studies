@@ -1,24 +1,24 @@
 from django.contrib import admin
-from agenda.models import Pessoa, Telefone, Email, Cadastro
+from agenda.models import Person, Telephone, Email, Register
 
 
-class PessoaAdmin(admin.ModelAdmin):
-    list_display = ('nome')
+class PersonAdmin(admin.ModelAdmin):
+    list_display = ('name')
 
 
-class TelefoneAdmin(admin.ModelAdmin):
-    list_display = ('numero', 'tipo')
+class TelephoneAdmin(admin.ModelAdmin):
+    list_display = ('number', 'kind')
 
 
 class EmailAdmin(admin.ModelAdmin):
-    list_display = ('endereco', 'tipo')
+    list_display = ('address', 'kind')
 
 
-class CadastroAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'pai', 'mae', 'data_nascimento', 'endereco', 'email_pessoal', 'email_institucional', 'telefone_residencial', 'telefone_celular')
+class RegisterAdmin(admin.ModelAdmin):
+    list_display = ('name', 'father', 'mother', 'birth_date', 'address', 'personal_email', 'institutional_email', 'phone', 'cell_phone')
 
 
-admin.site.register(Pessoa)
-admin.site.register(Telefone, TelefoneAdmin)
+admin.site.register(Person)
+admin.site.register(Telephone, TelephoneAdmin)
 admin.site.register(Email, EmailAdmin)
-admin.site.register(Cadastro, CadastroAdmin)
+admin.site.register(Register, RegisterAdmin)

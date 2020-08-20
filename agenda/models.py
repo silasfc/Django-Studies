@@ -1,52 +1,66 @@
 from django.db import models
+from django.utils.translation import gettext as _
 
 
-class Pessoa(models.Model):
-    nome = models.CharField(max_length=60)
+class Person(models.Model):
+    name = models.CharField(max_length=60, verbose_name=_('Name'))
 
-    def __str__(self):  # Python 3: def __unicode__(self):
-        return self.nome
+    class Meta:
+        verbose_name = _('Person')
+        verbose_name_plural = _('Persons')
+
+    def __str__(self):
+        return self.name
 
 
-class Telefone(models.Model):
-    TIPOS_DE_TELEFONES = (
-        ('R', 'Residencial'),  # Exibe 'Residencial', mas persiste 'R' no banco
-        ('C', 'Celular'),
+class Telephone(models.Model):
+    KIND_OF_TELEPHONES = (
+        (1, _('Phone')),  # Show 'Phone', but persists 1 on db
+        (2, _('Cell Phone'))
     )
 
-    numero = models.CharField(max_length=15)
-    tipo = models.CharField(
-        max_length=11, choices=TIPOS_DE_TELEFONES, default='R')
+    number = models.CharField(max_length=15, verbose_name=_('Number'))
+    kind = models.PositiveSmallIntegerField(choices=KIND_OF_TELEPHONES, default=1, verbose_name=_('Kind'))
 
-    def __str__(self):  # Python 3: def __unicode__(self):
-        return self.numero
+    class Meta:
+        verbose_name = _('Telephone')
+        verbose_name_plural = _('Telephones')
+
+    def __str__(self):
+        return self.number
 
 
 class Email(models.Model):
-    TIPOS_DE_EMAILS = (
-        ('P', 'Pessoal'),  # Exibe 'Pessoal', mas persiste 'P' no banco
-        ('I', 'Institucional'),
+    KIND_OF_EMAIL = (
+        (1, _('Personal')),  # Show 'Personal', but persists 1 on db
+        (2, _('Institutional')),
     )
 
-    endereco = models.CharField(max_length=35)
-    tipo = models.CharField(
-        max_length=13, choices=TIPOS_DE_EMAILS, default='P')
+    address = models.CharField(max_length=35, verbose_name=_('Address'))
+    kind = models.PositiveSmallIntegerField(choices=KIND_OF_EMAIL, default=1, verbose_name=_('Kind'))
 
-    def __str__(self):  # Python 3: def __unicode__(self):
-        return self.endereco
+    class Meta:
+        verbose_name = _('Email')
+        verbose_name_plural = _('Emails')
+
+    def __str__(self):
+        return self.address
 
 
-class Cadastro(models.Model):
-    nome = models.ForeignKey(Pessoa, related_name='+')
-    pai = models.ForeignKey(Pessoa, related_name='+')
-    mae = models.ForeignKey(Pessoa, related_name='+')
-    data_nascimento = models.DateField(null=True)  # ...ou DateTimeField
-    endereco = models.CharField(max_length=50, null=True)
-    email_pessoal = models.ForeignKey(Email, related_name='+')
-    email_institucional = models.ForeignKey(Email, related_name='+', null=True)
-    telefone_residencial = models.ForeignKey(
-        Telefone, related_name='+', null=True)
-    telefone_celular = models.ForeignKey(Telefone, related_name='+')
+class Register(models.Model):
+    name = models.ForeignKey(Person, related_name='+', on_delete=models.PROTECT, verbose_name=_('Name'))
+    father = models.ForeignKey(Person, related_name='+', on_delete=models.PROTECT, verbose_name=_('Father'))
+    mother = models.ForeignKey(Person, related_name='+', on_delete=models.PROTECT, verbose_name=_('Mother'))
+    birth_date = models.DateField(null=True, verbose_name=_('Birth Date'))  # ...or DateTimeField
+    address = models.CharField(max_length=50, null=True, verbose_name=_('Address'))
+    personal_email = models.ForeignKey(Email, related_name='+', on_delete=models.PROTECT, verbose_name=_('Personal Email'))
+    institutional_email = models.ForeignKey(Email, related_name='+', null=True, on_delete=models.PROTECT, verbose_name=_('Institutional Email'))
+    phone = models.ForeignKey(Telephone, related_name='+', null=True, on_delete=models.PROTECT, verbose_name=_('Phone'))
+    cell_phone = models.ForeignKey(Telephone, related_name='+', on_delete=models.PROTECT, verbose_name=_('Cell Phone'))
 
-    def __str__(self):  # Python 3: def __unicode__(self):
-        return u'%s' % self.nome
+    class Meta:
+        verbose_name = _('Register')
+        verbose_name_plural = _('Registers')
+
+    def __str__(self):
+        return u'%s' % self.name
