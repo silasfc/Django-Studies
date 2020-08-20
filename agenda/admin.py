@@ -2,23 +2,27 @@ from django.contrib import admin
 from agenda.models import Person, Telephone, Email, Register
 
 
+@admin.register(Person)
 class PersonAdmin(admin.ModelAdmin):
-    list_display = ('name')
+    pass
 
 
+@admin.register(Telephone)
 class TelephoneAdmin(admin.ModelAdmin):
-    list_display = ('number', 'kind')
+    pass
 
 
+@admin.register(Email)
 class EmailAdmin(admin.ModelAdmin):
-    list_display = ('address', 'kind')
+    pass
 
 
+@admin.register(Register)
 class RegisterAdmin(admin.ModelAdmin):
-    list_display = ('name', 'father', 'mother', 'birth_date', 'address', 'personal_email', 'institutional_email', 'phone', 'cell_phone')
+    pass
 
-
-admin.site.register(Person)
-admin.site.register(Telephone, TelephoneAdmin)
-admin.site.register(Email, EmailAdmin)
-admin.site.register(Register, RegisterAdmin)
+# or...
+# admin.site.register(Person)
+# admin.site.register(Telephone)
+# admin.site.register(Email)
+# admin.site.register(Register)
