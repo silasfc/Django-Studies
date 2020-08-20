@@ -1,6 +1,6 @@
 __pycache__/
 *.py[c|o]
-mariadapenha/
+*.mo
 migrations/
 log
 db.sqlite3
