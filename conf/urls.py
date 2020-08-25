@@ -20,7 +20,5 @@ urlpatterns = [
     path('agenda', include('agenda.urls')),
     path('snippets/', include('snippets.urls')),
     path('admin/', admin.site.urls),
-    # path('polls/', include('polls.urls')),
-    # url('^blog/', include('blog.urls', namespace='blog', app_name='blog')),
-    # url(r'^analisador/', include('analisador.urls', namespace='analisador', app_name='analisador')),
+    path('blog/', include('blog.urls', namespace='blog')),
 ]

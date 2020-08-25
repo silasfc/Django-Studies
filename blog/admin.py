@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import Post
 
 
@@ -10,4 +11,7 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     raw_id_fields = ('author',)
     date_hierarchy = 'publish'
-    ordering = ['status', 'publish']
+    ordering = ('status', 'publish')
+
+# or the default format:
+# admin.site.register(Post)

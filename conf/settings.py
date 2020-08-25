@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     # 'analisador',
     # 'atraves',
     # 'bands',
-    # 'blog',
+    'blog.apps.BlogConfig',
     # 'bootstrap3',
     # 'carro',
     # 'curinga',
