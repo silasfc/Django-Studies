@@ -72,6 +72,7 @@ EMAIL_HOST_USER = 'silascofc@gmail.com'
 EMAIL_HOST_PASSWORD = 'MinhaSenhaDoEmail'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
