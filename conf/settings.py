@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # 'atraves',
     # 'bands',
     'blog.apps.BlogConfig',
+    'taggit',
     # 'bootstrap3',
     # 'carro',
     # 'curinga',
@@ -68,8 +69,8 @@ REST_FRAMEWORK = {
 }
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'silascofc@gmail.com'
-EMAIL_HOST_PASSWORD = 'MinhaSenhaDoEmail'
+EMAIL_HOST_USER = 'your@mail.com'
+EMAIL_HOST_PASSWORD = 'YourAppPassword'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
