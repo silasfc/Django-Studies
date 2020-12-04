@@ -14,27 +14,21 @@ import json
 import os
 from pathlib import Path
 
-from django.core.exceptions import ImproperlyConfigured
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-with open(os.path.join(BASE_DIR, 'conf', 'secrets.json'), 'r') as f:
-    secrets = json.loads(f.read())
+with open(os.path.join(BASE_DIR, 'conf', 'settings.json'), 'r') as f:
+    settings = json.loads(f.read())
 
-def get_secret(setting):
-    """Get the secret variable or return explicit exception."""
-    try:
-        return secrets[setting]
-    except KeyError:
-        error_msg = f'Set the {setting} secret variable'
-        raise ImproperlyConfigured(error_msg)
+def get_setting(setting, default=None):
+    """Get the setting variable or return default value."""
+    return settings.get(setting, default)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_secret('SECRET_KEY')
+SECRET_KEY = get_setting('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,10 +73,10 @@ REST_FRAMEWORK = {
     ]
 }
 
-EMAIL_HOST = get_secret('EMAIL_HOST')
-EMAIL_PORT = get_secret('EMAIL_PORT')
-EMAIL_HOST_USER = get_secret('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = get_secret('EMAIL_HOST_PASSWORD')
+EMAIL_HOST = get_setting('EMAIL_HOST')
+EMAIL_PORT = get_setting('EMAIL_PORT')
+EMAIL_HOST_USER = get_setting('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = get_setting('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -120,16 +114,16 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-POSTGRESQL_DATABASE = get_secret('POSTGRESQL_DATABASE')
+PGSQL_DATABASE = get_setting('PGSQL_DATABASE')
 
 DATABASES = {
     'pgsql': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': POSTGRESQL_DATABASE['HOST'],
-        'PORT': POSTGRESQL_DATABASE['PORT'],
-        'NAME': POSTGRESQL_DATABASE['NAME'],
-        'USER': POSTGRESQL_DATABASE['USER'],
-        'PASSWORD': POSTGRESQL_DATABASE['PASSWORD']
+        'HOST': PGSQL_DATABASE['HOST'],
+        'PORT': PGSQL_DATABASE['PORT'],
+        'NAME': PGSQL_DATABASE['NAME'],
+        'USER': PGSQL_DATABASE['USER'],
+        'PASSWORD': PGSQL_DATABASE['PASSWORD']
     },
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

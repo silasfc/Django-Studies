@@ -5,4 +5,4 @@ migrations/
 log
 db.sqlite3
 /templates/
-conf/secrets.json
+conf/settings.json
